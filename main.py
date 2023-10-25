@@ -8,6 +8,13 @@ def encoder(password):
         new_pass += str(value)
 
     return new_pass
+def decode (encoded):
+    string = ""
+    value = 0
+    for i in range(0, len(encoded)):
+        value = int(encoded[i]) - 3
+        string += str(value)
+    return string
 
 def main():
 
@@ -28,7 +35,7 @@ def main():
             print("Your password has been encoded and stored!")
 
         if menu_selection == 2:
-            decoded_password = decoder(encoded_password)
+            decoded_password = decode(encoded_password)
             print("The encoded password is " + encoded_password + " ,and the original password is " + decoded_password + ".")
 
         if menu_selection == 3:
